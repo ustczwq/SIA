@@ -1,10 +1,10 @@
-# electron-quick-start
+# SIA
 
-**Clone and run for a quick way to see Electron in action.**
+**Serial Image Assistent**
 
-This is a minimal Electron application based on the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
+This is a Electron application forked by [Electron Quick Start](https://electronjs.org/docs/tutorial/quick-start) within the Electron documentation.
 
-**Use this app along with the [Electron API Demos](https://electronjs.org/#get-started) app for API code examples to help you get started.**
+**This app can help to connect with serial COM on your computer, capture the binarized matrix array sent by UART and convert array to images**
 
 A basic Electron application needs just these files:
 
@@ -12,17 +12,15 @@ A basic Electron application needs just these files:
 - `main.js` - Starts the app and creates a browser window to render HTML. This is the app's **main process**.
 - `index.html` - A web page to render. This is the app's **renderer process**.
 
-You can learn more about each of these components within the [Quick Start Guide](https://electronjs.org/docs/tutorial/quick-start).
-
 ## To Use
 
 To clone and run this repository you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
 ```bash
 # Clone this repository
-git clone https://github.com/electron/electron-quick-start
+git clone https://github.com/ustczwq/SIA
 # Go into the repository
-cd electron-quick-start
+cd SIA
 # Install dependencies
 npm install
 # Run the app
