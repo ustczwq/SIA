@@ -35,23 +35,31 @@
     </form>
     <br>
     <form>
-      <label for="StopBit">停止位</label>
-      <select id="StopBit" style="width:75px">
-        <option value="0">0</option>
+      <label for="StopBits">停止位</label>
+      <select id="StopBits" style="width:75px">
+        <option value="2">0</option>
         <option value="1" selected="selected">1</option>
       </select>
     </form>
     <br>
     <form>
-      <label for="ParityBit">校验位</label>
-      <select id="ParityBit" style="width:75px">
-        <option value="None" selected="selected">None</option>
-        <option value="0">Even</option>
-        <option value="1">Odd</option>
+      <label for="Parity">校验位</label>
+      <select id="Parity" style="width:75px">
+        <option value="none" selected="selected">None</option>
+        <option value="even">Even</option>
+        <option value="odd">Odd</option>
       </select>
     </form>
     <br>
-
+    <button id="End" style="display:none; background-color:springgreen; width: 130px">已连接</button>
+    <button id="Start" style="display:block; background-color:orangered; width: 130px">已断开</button>
+    <!-- <div id="StartMsg" style="display:none;">
+      <p>Connected!</p>
+    </div>
+    <div id="EndMsg" style="display:none;">
+      <p>Disconnected!</p>
+    </div> -->
+    
     <script>
       // You can also require other files to run in this process
       require('./renderer.js')

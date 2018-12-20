@@ -20,8 +20,36 @@ $("#Port").on("mousedown", function(){
     serialport.list((err, ports) => {
         $(this).empty();
         for (let item of ports) {
-            console.log(item.comName);
+            //console.log(item.comName);
             $(this).append(`<option>${item.comName}</option>`);
         }
     })
 });
+
+$('#Start').click(() => {
+    $("#Start").css("display","none");
+    //$("#StartMsg").show().delay(300).hide(10);
+    $("#End").css("display","block");
+
+    let COM = $('#Port option:selected').val();
+    let BaudRate = $('#BaudRate option:selected').val();
+    let StopBits = $('#StopBits option:selected').val();
+    let Parity = $('#Parity option:selected').val();
+    //alert([COM, BaudRate, StopBits, Parity]);
+    port = new serialport(COM, {
+        baudRate:parseInt(BaudRate),
+        stopBits:parseInt(StopBits),
+        parity:Parity
+    })
+}); 
+
+$('#End').click(() => {
+    $("#End").css("display","none");
+    //$("#EndMsg").show().delay(300).hide(10);
+    $("#Start").css("display","block");
+
+    if (port){
+        port.close();
+    }
+});
+
