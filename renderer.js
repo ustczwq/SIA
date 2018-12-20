@@ -53,3 +53,17 @@ $('#End').click(() => {
     }
 });
 
+$('#SendData').click(() => {
+    // alert("send");
+    var sendData = $('#Data').val();
+    if (port != {} && port != null) {
+        //console.log(`SendData: ${sendData}`);
+        port.write(sendData);
+        //alert(sendData);
+    }
+});
+
+$('#DropData').click(() => {
+    //alert("drop");
+    $('#Data').val('');
+});
