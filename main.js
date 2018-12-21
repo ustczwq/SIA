@@ -48,3 +48,14 @@ app.on('activate', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+// const {ipcMain, dialog} = require('electron')
+
+// Require each JS file in the main-process dir
+const path = require('path')
+const glob = require('glob')
+
+function loadDemos () {
+  const files = glob.sync(path.join(__dirname, 'assets/js/main/*.js'))
+  files.forEach((file) => { require(file) })
+}
+loadDemos()

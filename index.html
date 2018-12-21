@@ -13,11 +13,7 @@
   <link rel="stylesheet" href="assets/css/github.css">
 
   <link rel="import" href="sections/windows/windows.html">
-  <link rel="import" href="sections/native-ui/ex-links-file-manager.html">
-  <link rel="import" href="sections/native-ui/notifications.html">
   <link rel="import" href="sections/native-ui/dialogs.html">
-  <link rel="import" href="sections/native-ui/tray.html">
-  <link rel="import" href="sections/native-ui/drag.html">
   <link rel="import" href="sections/media/desktop-capturer.html">
 </head>
 <body>
@@ -78,34 +74,40 @@
             </div>
         </div>
 
-        <div class="nav-item u-category-native-ui">
-            <button type="button" id="button-ex-links-file-manager" data-section="ex-links-file-manager" class="nav-button nav-header-text">
-                <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
-                Native
-            </button>
-        </div>
-        
         <div class="nav-item u-category-media">
             <button type="button" id="button-desktop-capturer" data-section="desktop-capturer" class="nav-button nav-header-text">
                 <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-media"></use></svg>
-                Media
+                Image
             </button>
-        </div>  
+        </div> 
 
-        <footer class="nav-footer">
+        <div class="nav-item u-category-native-ui">
+            <button type="button" id="button-dialogs" data-section="dialogs" class="nav-button nav-header-text">
+                <svg class="nav-icon"><use xlink:href="assets/img/icons.svg#icon-native-ui"></use></svg>
+                Native
+            </button>
+
+            <!-- <button id="select-directory" class="nav-button">
+                &emsp;&ensp;Directory:
+            </button>
+            <div class="nav-button" id="selected-file"></div> -->
+        </div>
+
+        <!-- <footer class="nav-footer">
             <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
             <a class="nav-footer-logo" href="https://github.com" aria-label="Homepage">
                 <svg class="nav-footer-icon"><use xlink:href="assets/img/icons.svg#icon-love"></use></svg>
             </a>
-        </footer>
+        </footer> -->
     </nav>
 
     <main class="content js-content"></main>
 
     <script>
-        require('./assets/js/imports')
-        require('./assets/js/nav')
-        require('./assets/js/ports.js')
+        require('./assets/js/renderer/imports')
+        require('./assets/js/renderer/nav')
+        require('./assets/js/renderer/ports.js')
+        require('./assets/js/renderer/open-file.js')
     </script>
 </body>
 </html>

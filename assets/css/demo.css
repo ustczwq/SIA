@@ -251,8 +251,8 @@
   margin-left: calc(90% - 10em);
   border: 1px solid;
   border-radius: 2px;
-  border-color: hsl(116, 30%, 36%);
-  color: hsl(116, 30%, 36%);
+  border-color: inherit;
+  color: inherit;
   font-size: 1em;
   background-color: white;
 }
@@ -283,3 +283,46 @@
 .send-button:active {
   border-color: var(--color-border);
 }
+
+.directory {
+  width: 100%;
+  height: 70px;
+  margin-bottom: 2px;
+  background: white;
+}
+.directory:focus {
+  outline: none;
+  border-color: hsl(0,0%,80%);
+  background-color: white;
+}
+
+.convert-button {
+  align-self: flex-start;
+  height: 35px;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-top: .8em;
+  border: 2px solid;
+  border-radius: 4px;
+  font: inherit;
+  font-size: 1.2em;
+  color: inherit;
+  background-color: transparent;
+}
+.convert-button:focus {
+  outline: none;
+  background-color: white;
+}
+.convert-button:active {
+  border-color: var(--color-border);
+}
+.native-down {
+  width: 100%;
+  height: 100px;
+}
+.native-up {
+  width: 100%;
+  height: 242px;
+  background: var(--color-accent) linear-gradient(hsla(0,0%,100%,.85), hsla(0,0%,100%,.85));
+}
+
