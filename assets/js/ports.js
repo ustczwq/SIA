@@ -49,3 +49,13 @@ $('#SendData').click(() => {
         //alert(sendData);
     }
 });
+
+$('#clear-received').click(() => {
+    //alert("drop");
+    $('#received-window').empty();
+});
+
+$('#clear-send').click(() => {
+    //alert("drop");
+    $('#sent-window').val('');
+});
