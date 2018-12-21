@@ -1,16 +1,3 @@
-// This file is required by the index.html file and will
-// be executed in the renderer process for that window.
-// All of the Node.js APIs are available in this process.
-// window.$ = window.jQuery = require('jquery')
-// let serialport = require('serialport');
-// let port = null;
-// serialport.list((err, ports) => {
-//     for (let item of ports) {
-//         $('.com').append(`<option>${item.comName}</option>`);
-//     }
-//     console.log(ports);
-// });
-
 window.$ = window.jQuery = require('jquery')
 let serialport = require('serialport');
 let port = null;
@@ -28,7 +15,6 @@ $("#Port").on("mousedown", function(){
 
 $('#Start').click(() => {
     $("#Start").css("display","none");
-    //$("#StartMsg").show().delay(300).hide(10);
     $("#End").css("display","block");
 
     let COM = $('#Port option:selected').val();
@@ -41,34 +27,25 @@ $('#Start').click(() => {
         stopBits:parseInt(StopBits),
         parity:Parity
     });
-    $('#Received').text(`打开串口: ${COM}, 波特率: ${BaudRate}`);
+    $('#received-window').text(`OpenPort: ${COM}, BaudRate: ${BaudRate}`);
     port.on('data', data => {
         console.log(`DATA: ${data}`);
-        $('#Received').append(data.toString());
+        $('#received-window').append(data.toString());
     });
 }); 
 
 $('#End').click(() => {
     $("#End").css("display","none");
-    //$("#EndMsg").show().delay(300).hide(10);
     $("#Start").css("display","block");
-
     if (port){
         port.close();
     }
 });
 
 $('#SendData').click(() => {
-    // alert("send");
-    var sendData = $('#Data').val();
+    var sendData = $('#sent-window').val();
     if (port != {} && port != null) {
-        //console.log(`SendData: ${sendData}`);
         port.write(sendData);
         //alert(sendData);
     }
-});
-
-$('#DropData').click(() => {
-    //alert("drop");
-    $('#Data').val('');
 });
