@@ -1,3 +1,12 @@
+function string2ASCII(str){
+    var len = str.length;
+    var asciiStr = ''
+    for (var i = 0; i < len; i++){
+        asciiStr += str.charCodeAt(i).toString(16);
+        asciiStr += ' ';
+    }
+    return asciiStr;
+}
 window.$ = window.jQuery = require('jquery')
 let serialport = require('serialport');
 let port = null;
@@ -30,6 +39,7 @@ $('#Start').click(() => {
     $('#received-window').text(`OpenPort: ${COM}, BaudRate: ${BaudRate}`);
     port.on('data', data => {
         console.log(`DATA: ${data}`);
+        // $('#received-window').append(string2ASCII(data.toString()));
         $('#received-window').append(data.toString());
     });
 }); 
@@ -59,3 +69,4 @@ $('#clear-send').click(() => {
     //alert("drop");
     $('#sent-window').val('');
 });
+
