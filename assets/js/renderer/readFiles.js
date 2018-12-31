@@ -40,7 +40,7 @@ function fileDisplay(filePath){
 
 convertAll.addEventListener('click', (event) => {
     var floderPath = selectedFile.innerText
-    alert(floderPath)
+    // alert(floderPath)
     fileDisplay(floderPath)
 
 })
